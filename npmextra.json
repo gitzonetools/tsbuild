@@ -1,8 +1,6 @@
 {
   "npmci": {
-    "npmGlobalTools": [
-      "typescript"
-    ],
+    "npmGlobalTools": [],
     "npmAccessLevel": "public"
   }
 }
