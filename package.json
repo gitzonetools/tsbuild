@@ -1,0 +1,37 @@
+{
+  "name": "tsn",
+  "version": "2.0.15",
+  "private": false,
+  "description": "TypeScript nightly to easily make use of latest features",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "tsrun test/test.ts",
+    "build": "node cli.ts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/pushrocks/tsn.git"
+  },
+  "keywords": [
+    "TypeScript"
+  ],
+  "author": "Lossless GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/pushrocks/tsn/issues"
+  },
+  "homepage": "https://gitlab.com/pushrocks/tsn#README",
+  "dependencies": {
+    "@pushrocks/smartfile": "^6.0.3",
+    "@pushrocks/smartpath": "^4.0.1",
+    "@pushrocks/smartpromise": "^2.0.5",
+    "smartlog": "^1.0.3",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@gitzone/tsrun": "^1.1.9",
+    "@pushrocks/tapbundle": "^3.0.1",
+    "@types/node": "^10.5.3"
+  }
+}
