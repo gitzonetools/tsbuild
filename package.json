@@ -27,9 +27,9 @@
   "homepage": "https://gitlab.com/pushrocks/tsn#README",
   "dependencies": {
     "@pushrocks/smartfile": "^6.0.3",
+    "@pushrocks/smartlog": "^2.0.1",
     "@pushrocks/smartpath": "^4.0.1",
     "@pushrocks/smartpromise": "^2.0.5",
-    "smartlog": "^1.0.3",
     "typescript": "^2.9.2"
   },
   "devDependencies": {
