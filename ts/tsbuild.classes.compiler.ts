@@ -11,13 +11,10 @@ export const compilerOptionsDefault: CompilerOptions = {
   emitDecoratorMetadata: true,
   experimentalDecorators: true,
   inlineSourceMap: true,
-  noEmitOnError: false,
+  noEmitOnError: true,
   outDir: 'dist/',
   module: plugins.typescript.ModuleKind.CommonJS,
-  lib: [
-    'es2016',
-    'es2017'
-  ],
+  lib: ['lib.es2016.d.ts', 'lib.es2017.d.ts'],
   noImplicitAny: false,
   target: plugins.typescript.ScriptTarget.ES2015
 };
@@ -42,7 +39,7 @@ export const compiler = (
   fileNames: string[],
   options: plugins.typescript.CompilerOptions
 ): Promise<any[]> => {
-  console.log(options);
+  console.log(`Compiling ${fileNames.length} files...`);
   let done = plugins.smartpromise.defer<any[]>();
   let program = plugins.typescript.createProgram(fileNames, options);
   let emitResult = program.emit();
@@ -55,15 +52,17 @@ export const compiler = (
   let allDiagnostics = plugins.typescript
     .getPreEmitDiagnostics(program)
     .concat(emitResult.diagnostics);
-  try {
-    allDiagnostics.forEach(diagnostic => {
-      let { line, character } = diagnostic.file.getLineAndCharacterOfPosition(diagnostic.start);
+  allDiagnostics.forEach(diagnostic => {
+    if (diagnostic.file) {
+      let { line, character } = diagnostic.file.getLineAndCharacterOfPosition(diagnostic.start!);
       let message = plugins.typescript.flattenDiagnosticMessageText(diagnostic.messageText, '\n');
       console.log(`${diagnostic.file.fileName} (${line + 1},${character + 1}): ${message}`);
-    });
-  } catch (err) {
-    // console.log(allDiagnostics)
-  }
+    } else {
+      console.log(
+        `${plugins.typescript.flattenDiagnosticMessageText(diagnostic.messageText, '\n')}`
+      );
+    }
+  });
 
   let exitCode = emitResult.emitSkipped ? 1 : 0;
   if (exitCode === 0) {
