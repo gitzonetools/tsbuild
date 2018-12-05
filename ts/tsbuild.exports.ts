@@ -8,9 +8,10 @@ export * from './tsbuild.classes.compiler';
  */
 export let compileFileArray = (
   fileStringArrayArg: string[],
-  compilerOptionsArg: CompilerOptions = {}
+  compilerOptionsArg: CompilerOptions = {},
+  argvArg?: any,
 ): Promise<any[]> => {
-  return compiler(fileStringArrayArg, mergeCompilerOptions(compilerOptionsArg));
+  return compiler(fileStringArrayArg, mergeCompilerOptions(compilerOptionsArg, argvArg), argvArg);
 };
 
 /**
@@ -23,30 +24,33 @@ export let compileFileArray = (
 export let compileGlobStringObject = async (
   globStringObjectArg: any,
   tsOptionsArg: CompilerOptions = {},
-  cwdArg: string = process.cwd()
+  cwdArg: string = process.cwd(),
+  argvArg?: any,
 ) => {
   let compiledFiles = [];
-  for (let keyArg in globStringObjectArg) {
-    console.log(
-      `TypeScript assignment: transpile from ${keyArg} to ${globStringObjectArg[keyArg]}`
-    );
-    const fileTreeArray = await plugins.smartfile.fs.listFileTree(cwdArg, keyArg);
-    let absoluteFilePathArray: string[] = plugins.smartpath.transform.toAbsolute(
-      fileTreeArray,
-      cwdArg
-    );
-    let destDir: string = plugins.smartpath.transform.toAbsolute(
-      globStringObjectArg[keyArg],
-      cwdArg
-    );
-    tsOptionsArg = {
-      ...tsOptionsArg,
-      outDir: destDir
-    };
-    compiledFiles = compiledFiles.concat(
-      compiledFiles,
-      await compileFileArray(absoluteFilePathArray, tsOptionsArg)
-    );
+  for (const keyArg in globStringObjectArg) {
+    if(globStringObjectArg[keyArg]) {
+      console.log(
+        `TypeScript assignment: transpile from ${keyArg} to ${globStringObjectArg[keyArg]}`
+      );
+      const fileTreeArray = await plugins.smartfile.fs.listFileTree(cwdArg, keyArg);
+      let absoluteFilePathArray: string[] = plugins.smartpath.transform.toAbsolute(
+        fileTreeArray,
+        cwdArg
+      );
+      let destDir: string = plugins.smartpath.transform.toAbsolute(
+        globStringObjectArg[keyArg],
+        cwdArg
+      );
+      tsOptionsArg = {
+        ...tsOptionsArg,
+        outDir: destDir
+      };
+      compiledFiles = compiledFiles.concat(
+        compiledFiles,
+        await compileFileArray(absoluteFilePathArray, tsOptionsArg, argvArg)
+      );
+    }
   }
   return compiledFiles;
 };

@@ -19,13 +19,26 @@ export const compilerOptionsDefault: CompilerOptions = {
   target: plugins.typescript.ScriptTarget.ES2015
 };
 
+export const compilerOptionsWebDefault: CompilerOptions = {
+  ...compilerOptionsDefault,
+  lib: [...compilerOptionsDefault.lib, 'dom']
+};
+
 /**
  * merges compilerOptions with the default compiler options
  */
-export const mergeCompilerOptions = function(customTsOptions: CompilerOptions): CompilerOptions {
+export const mergeCompilerOptions = (customTsOptions: CompilerOptions, argvArg?: any): CompilerOptions => {
+  const defaultOptionsToMerge = (() => {
+    if (argvArg && argvArg.web) {
+      return compilerOptionsWebDefault;
+    } else {
+      return compilerOptionsDefault;
+    }
+  })();
+
   // create merged options
   let mergedOptions: CompilerOptions = {
-    ...compilerOptionsDefault,
+    ...defaultOptionsToMerge,
     ...customTsOptions
   };
 
@@ -37,7 +50,8 @@ export const mergeCompilerOptions = function(customTsOptions: CompilerOptions): 
  */
 export const compiler = (
   fileNames: string[],
-  options: plugins.typescript.CompilerOptions
+  options: plugins.typescript.CompilerOptions,
+  argvArg?: any,
 ): Promise<any[]> => {
   console.log(`Compiling ${fileNames.length} files...`);
   let done = plugins.smartpromise.defer<any[]>();
