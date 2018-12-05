@@ -15,3 +15,5 @@ tsbuildCli.standardTask().subscribe(argvArg => {
     );
   }
 });
+
+tsbuildCli.startParse();
