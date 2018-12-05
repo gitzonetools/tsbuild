@@ -21,7 +21,7 @@ export const compilerOptionsDefault: CompilerOptions = {
 
 export const compilerOptionsWebDefault: CompilerOptions = {
   ...compilerOptionsDefault,
-  lib: [...compilerOptionsDefault.lib, 'dom']
+  lib: [...compilerOptionsDefault.lib, 'lib.dom.d.ts']
 };
 
 /**
