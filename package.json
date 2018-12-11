@@ -26,15 +26,15 @@
   },
   "homepage": "https://gitlab.com/pushrocks/tsn#README",
   "dependencies": {
-    "@pushrocks/smartcli": "^3.0.6",
+    "@pushrocks/smartcli": "^3.0.7",
     "@pushrocks/smartfile": "^6.0.11",
     "@pushrocks/smartlog": "^2.0.9",
     "@pushrocks/smartpath": "^4.0.1",
     "@pushrocks/smartpromise": "^2.0.5",
-    "typescript": "^3.2.1"
+    "typescript": "^3.2.2"
   },
   "devDependencies": {
-    "@gitzone/tsrun": "^1.1.13",
+    "@gitzone/tsrun": "^1.1.17",
     "@pushrocks/tapbundle": "^3.0.7",
     "@types/node": "^10.12.12",
     "tslint": "^5.11.0",
