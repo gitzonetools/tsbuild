@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "tsrun test/test.ts",
+    "testCustom": "node cli.ts.js custom ts_web",
     "build": "node cli.ts.js"
   },
   "repository": {
