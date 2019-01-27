@@ -27,7 +27,7 @@ tsbuildCli.addCommand('custom').subscribe(argvArg => {
   listedDirectories.shift();
   const compilationCommandObject: {[key: string]: string} = {};
   for (const directory of listedDirectories) {
-    compilationCommandObject['./' + directory] = './dist_' + directory;
+    compilationCommandObject[`./${directory}/**/*.ts`] = `./dist_${directory}`;
   };
   tsbuild.compileGlobStringObject(
     compilationCommandObject,
