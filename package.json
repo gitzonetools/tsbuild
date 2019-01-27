@@ -1,6 +1,6 @@
 {
   "name": "@gitzone/tsbuild",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "private": false,
   "description": "TypeScript nightly to easily make use of latest features",
   "main": "dist/index.js",
