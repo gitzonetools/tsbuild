@@ -14,9 +14,9 @@ export const compilerOptionsDefault: CompilerOptions = {
   noEmitOnError: true,
   outDir: 'dist/',
   module: plugins.typescript.ModuleKind.CommonJS,
-  lib: ['lib.es2016.d.ts', 'lib.es2017.d.ts'],
+  lib: ['lib.es2017.d.ts'],
   noImplicitAny: false,
-  target: plugins.typescript.ScriptTarget.ES2015
+  target: plugins.typescript.ScriptTarget.ES2017
 };
 
 export const compilerOptionsWebDefault: CompilerOptions = {
