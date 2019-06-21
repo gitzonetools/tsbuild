@@ -35,6 +35,6 @@ tsbuildCli.addCommand('custom').subscribe(argvArg => {
     process.cwd(),
     argvArg
   );
-})
+});
 
 tsbuildCli.startParse();
