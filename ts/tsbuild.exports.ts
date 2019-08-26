@@ -9,7 +9,7 @@ export * from './tsbuild.classes.compiler';
 export let compileFileArray = (
   fileStringArrayArg: string[],
   compilerOptionsArg: CompilerOptions = {},
-  argvArg?: any,
+  argvArg?: any
 ): Promise<any[]> => {
   return compiler(fileStringArrayArg, mergeCompilerOptions(compilerOptionsArg, argvArg), argvArg);
 };
@@ -25,11 +25,11 @@ export let compileGlobStringObject = async (
   globStringObjectArg: any,
   tsOptionsArg: CompilerOptions = {},
   cwdArg: string = process.cwd(),
-  argvArg?: any,
+  argvArg?: any
 ) => {
   let compiledFiles = [];
   for (const keyArg in globStringObjectArg) {
-    if(globStringObjectArg[keyArg]) {
+    if (globStringObjectArg[keyArg]) {
       console.log(
         `TypeScript assignment: transpile from ${keyArg} to ${globStringObjectArg[keyArg]}`
       );

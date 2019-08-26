@@ -28,7 +28,10 @@ export const compilerOptionsWebDefault: CompilerOptions = {
 /**
  * merges compilerOptions with the default compiler options
  */
-export const mergeCompilerOptions = (customTsOptions: CompilerOptions, argvArg?: any): CompilerOptions => {
+export const mergeCompilerOptions = (
+  customTsOptions: CompilerOptions,
+  argvArg?: any
+): CompilerOptions => {
   const defaultOptionsToMerge = (() => {
     if (argvArg && argvArg.web) {
       return compilerOptionsWebDefault;
@@ -52,7 +55,7 @@ export const mergeCompilerOptions = (customTsOptions: CompilerOptions, argvArg?:
 export const compiler = (
   fileNames: string[],
   options: plugins.typescript.CompilerOptions,
-  argvArg?: any,
+  argvArg?: any
 ): Promise<any[]> => {
   console.log(`Compiling ${fileNames.length} files...`);
   let done = plugins.smartpromise.defer<any[]>();

@@ -1,22 +1,20 @@
-# tsn
+# @gitzone/tsbuild
+TypeScript nightly to easily make use of latest features
 
-## Availabililty
-
-[![npm](https://push.rocks/assets/repo-button-npm.svg)](https://www.npmjs.com/package/tsn)
-[![git](https://push.rocks/assets/repo-button-git.svg)](https://gitlab.com/pushrocks/tsn)
-[![git](https://push.rocks/assets/repo-button-mirror.svg)](https://github.com/pushrocks/tsn)
-[![docs](https://push.rocks/assets/repo-button-docs.svg)](https://pushrocks.gitlab.io/tsn/)
+## Availabililty and Links
+* [npmjs.org (npm package)](https://www.npmjs.com/package/@gitzone/tsbuild)
+* [gitlab.com (source)](https://gitlab.com/gitzone/tsbuild)
+* [github.com (source mirror)](https://github.com/gitzone/tsbuild)
+* [docs (typedoc)](https://gitzone.gitlab.io/tsbuild/)
 
 ## Status for master
-
-[![build status](https://gitlab.com/pushrocks/tsn/badges/master/build.svg)](https://gitlab.com/pushrocks/tsn/commits/master)
-[![coverage report](https://gitlab.com/pushrocks/tsn/badges/master/coverage.svg)](https://gitlab.com/pushrocks/tsn/commits/master)
-[![Dependency Status](https://david-dm.org/pushrocks/tsn.svg)](https://david-dm.org/pushrocks/tsn)
-[![bitHound Dependencies](https://www.bithound.io/github/pushrocks/tsn/badges/dependencies.svg)](https://www.bithound.io/github/pushrocks/tsn/master/dependencies/npm)
-[![bitHound Code](https://www.bithound.io/github/pushrocks/tsn/badges/code.svg)](https://www.bithound.io/github/pushrocks/tsn)
-[![TypeScript](https://img.shields.io/badge/TypeScript-2.x-blue.svg)](https://nodejs.org/dist/latest-v6.x/docs/api/)
-[![node](https://img.shields.io/badge/node->=%206.x.x-blue.svg)](https://nodejs.org/dist/latest-v6.x/docs/api/)
-[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![build status](https://gitlab.com/gitzone/tsbuild/badges/master/build.svg)](https://gitlab.com/gitzone/tsbuild/commits/master)
+[![coverage report](https://gitlab.com/gitzone/tsbuild/badges/master/coverage.svg)](https://gitlab.com/gitzone/tsbuild/commits/master)
+[![npm downloads per month](https://img.shields.io/npm/dm/@gitzone/tsbuild.svg)](https://www.npmjs.com/package/@gitzone/tsbuild)
+[![Known Vulnerabilities](https://snyk.io/test/npm/@gitzone/tsbuild/badge.svg)](https://snyk.io/test/npm/@gitzone/tsbuild)
+[![TypeScript](https://img.shields.io/badge/TypeScript->=%203.x-blue.svg)](https://nodejs.org/dist/latest-v10.x/docs/api/)
+[![node](https://img.shields.io/badge/node->=%2010.x.x-blue.svg)](https://nodejs.org/dist/latest-v10.x/docs/api/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-prettier-ff69b4.svg)](https://prettier.io/)
 
 ## Usage
 
@@ -68,3 +66,10 @@ tsn.compileGlobStringObject(
 ```
 
 [![npm](https://push.rocks/assets/repo-header.svg)](https://push.rocks)
+
+For further information read the linked docs at the top of this readme.
+
+> MIT licensed | **&copy;** [Lossless GmbH](https://lossless.gmbh)
+| By using this npm module you agree to our [privacy policy](https://lossless.gmbH/privacy)
+
+[![repo-footer](https://lossless.gitlab.io/publicrelations/repofooter.svg)](https://maintainedby.lossless.com)

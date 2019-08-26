@@ -25,16 +25,11 @@ tsbuildCli.standardTask().subscribe(argvArg => {
 tsbuildCli.addCommand('custom').subscribe(argvArg => {
   const listedDirectories = argvArg._;
   listedDirectories.shift();
-  const compilationCommandObject: {[key: string]: string} = {};
+  const compilationCommandObject: { [key: string]: string } = {};
   for (const directory of listedDirectories) {
     compilationCommandObject[`./${directory}/**/*.ts`] = `./dist_${directory}`;
-  };
-  tsbuild.compileGlobStringObject(
-    compilationCommandObject,
-    {},
-    process.cwd(),
-    argvArg
-  );
+  }
+  tsbuild.compileGlobStringObject(compilationCommandObject, {}, process.cwd(), argvArg);
 });
 
 tsbuildCli.startParse();
