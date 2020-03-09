@@ -34,7 +34,7 @@ tsbuildCli.addCommand('custom').subscribe(async argvArg => {
 
 tsbuildCli.addCommand('element').subscribe(async argvArg => {
   await tsbuild.compileGlobStringObject({
-    "./ts_web": "dist_ts_web"
+    "./ts_web/**/*.ts": "dist_ts_web"
   }, {}, process.cwd(), {web: true});
 });
 
