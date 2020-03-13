@@ -10,7 +10,7 @@ tsbuildCli.standardTask().subscribe(async argvArg => {
   if (process.env.CLI_CALL_TSBUILD === 'true') {
     tsbuild.compileGlobStringObject(
       {
-        './ts/**/*.ts': './dist'
+        './ts/**/*.ts': './dist_ts'
       },
       {},
       process.cwd(),
@@ -33,9 +33,14 @@ tsbuildCli.addCommand('custom').subscribe(async argvArg => {
 });
 
 tsbuildCli.addCommand('element').subscribe(async argvArg => {
-  await tsbuild.compileGlobStringObject({
-    "./ts_web/**/*.ts": "dist_ts_web"
-  }, {}, process.cwd(), {web: true});
+  await tsbuild.compileGlobStringObject(
+    {
+      './ts_web/**/*.ts': 'dist_ts_web'
+    },
+    {},
+    process.cwd(),
+    { web: true }
+  );
 });
 
 tsbuildCli.startParse();

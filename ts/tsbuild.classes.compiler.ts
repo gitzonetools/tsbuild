@@ -12,7 +12,7 @@ export const compilerOptionsDefault: CompilerOptions = {
   experimentalDecorators: true,
   inlineSourceMap: true,
   noEmitOnError: true,
-  outDir: 'dist/',
+  outDir: 'dist_ts/',
   module: plugins.typescript.ModuleKind.CommonJS,
   lib: ['lib.es2017.d.ts'],
   noImplicitAny: false,
@@ -41,7 +41,7 @@ export const mergeCompilerOptions = (
   })();
 
   // create merged options
-  let mergedOptions: CompilerOptions = {
+  const mergedOptions: CompilerOptions = {
     ...defaultOptionsToMerge,
     ...customTsOptions
   };
@@ -58,22 +58,22 @@ export const compiler = (
   argvArg?: any
 ): Promise<any[]> => {
   console.log(`Compiling ${fileNames.length} files...`);
-  let done = plugins.smartpromise.defer<any[]>();
-  let program = plugins.typescript.createProgram(fileNames, options);
-  let emitResult = program.emit();
+  const done = plugins.smartpromise.defer<any[]>();
+  const program = plugins.typescript.createProgram(fileNames, options);
+  const emitResult = program.emit();
 
   // implement check only
   /*let emitResult = program.emit(undefined,(args) => {
     console.log(args)
   });*/
 
-  let allDiagnostics = plugins.typescript
+  const allDiagnostics = plugins.typescript
     .getPreEmitDiagnostics(program)
     .concat(emitResult.diagnostics);
   allDiagnostics.forEach(diagnostic => {
     if (diagnostic.file) {
-      let { line, character } = diagnostic.file.getLineAndCharacterOfPosition(diagnostic.start!);
-      let message = plugins.typescript.flattenDiagnosticMessageText(diagnostic.messageText, '\n');
+      const { line, character } = diagnostic.file.getLineAndCharacterOfPosition(diagnostic.start!);
+      const message = plugins.typescript.flattenDiagnosticMessageText(diagnostic.messageText, '\n');
       console.log(`${diagnostic.file.fileName} (${line + 1},${character + 1}): ${message}`);
     } else {
       console.log(
@@ -82,7 +82,7 @@ export const compiler = (
     }
   });
 
-  let exitCode = emitResult.emitSkipped ? 1 : 0;
+  const exitCode = emitResult.emitSkipped ? 1 : 0;
   if (exitCode === 0) {
     console.log('TypeScript emit succeeded!');
     done.resolve(emitResult.emittedFiles);
