@@ -4,7 +4,7 @@
   "private": false,
   "description": "TypeScript nightly to easily make use of latest features",
   "main": "dist_ts/index.js",
-  "typings": "dist/index.d.ts",
+  "typings": "dist_ts/index.d.ts",
   "bin": {
     "tsbuild": "cli.js"
   },
@@ -45,8 +45,7 @@
     "ts/**/*",
     "ts_web/**/*",
     "dist/**/*",
-    "dist_bundle/**/*",
-    "dist_web/**/*",
+    "dist_*/**/*",
     "dist_ts/**/*",
     "dist_ts_web/**/*",
     "assets/**/*",

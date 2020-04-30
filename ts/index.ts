@@ -1,3 +1,2 @@
 export * from './tsbuild.exports';
-
-import './tsbuild.cli';
+export * from './tsbuild.cli';
