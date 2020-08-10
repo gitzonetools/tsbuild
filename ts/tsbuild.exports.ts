@@ -34,11 +34,11 @@ export let compileGlobStringObject = async (
         `TypeScript assignment: transpile from ${keyArg} to ${globStringObjectArg[keyArg]}`
       );
       const fileTreeArray = await plugins.smartfile.fs.listFileTree(cwdArg, keyArg);
-      let absoluteFilePathArray: string[] = plugins.smartpath.transform.toAbsolute(
+      const absoluteFilePathArray: string[] = plugins.smartpath.transform.toAbsolute(
         fileTreeArray,
         cwdArg
       );
-      let destDir: string = plugins.smartpath.transform.toAbsolute(
+      const destDir: string = plugins.smartpath.transform.toAbsolute(
         globStringObjectArg[keyArg],
         cwdArg
       );
