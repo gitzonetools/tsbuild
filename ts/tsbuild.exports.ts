@@ -27,7 +27,7 @@ export let compileGlobStringObject = async (
   cwdArg: string = process.cwd(),
   argvArg?: any
 ) => {
-  let compiledFiles = [];
+  let compiledFiles: plugins.smartfile.Smartfile[] = [];
   for (const keyArg in globStringObjectArg) {
     if (globStringObjectArg[keyArg]) {
       console.log(
