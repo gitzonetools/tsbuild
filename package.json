@@ -33,12 +33,12 @@
     "@pushrocks/smartlog": "^2.0.44",
     "@pushrocks/smartpath": "^4.0.3",
     "@pushrocks/smartpromise": "^3.1.6",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.2"
   },
   "devDependencies": {
     "@gitzone/tsrun": "^1.2.17",
     "@pushrocks/tapbundle": "^3.2.14",
-    "@types/node": "^16.6.1",
+    "@types/node": "^16.7.13",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0"
   },
