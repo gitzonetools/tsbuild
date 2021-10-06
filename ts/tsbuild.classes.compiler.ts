@@ -17,7 +17,8 @@ export const compilerOptionsDefault: CompilerOptions = {
   lib: ['lib.es2017.d.ts'],
   noImplicitAny: false,
   esModuleInterop: true,
-  target: plugins.typescript.ScriptTarget.ES2017
+  target: plugins.typescript.ScriptTarget.ES2017,
+  importsNotUsedAsValues: plugins.typescript.ImportsNotUsedAsValues.Preserve
 };
 
 export const compilerOptionsWebDefault: CompilerOptions = {
