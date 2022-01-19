@@ -44,7 +44,10 @@ export const mergeCompilerOptions = (
   // create merged options
   const mergedOptions: CompilerOptions = {
     ...defaultOptionsToMerge,
-    ...customTsOptions
+    ...customTsOptions,
+    ...argvArg && argvArg.skiplibcheck ? {
+      skipLibCheck: true
+    } : {},
   };
 
   return mergedOptions;
