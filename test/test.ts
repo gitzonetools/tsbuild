@@ -1,6 +1,6 @@
-import { tap, expect } from '@pushrocks/tapbundle';
+import { tap, expect, expectAsync } from '@pushrocks/tapbundle';
 
-import * as tsn from '../ts/index';
+import * as tsbuild from '../ts/index';
 
 let assetfiles: string[] = ['./test/assets/tocompile.ts', './test/assets/tocompile2.ts'];
 
@@ -9,11 +9,11 @@ let assetfiles2 = {
 };
 
 tap.test('should convert files from an array with single files to output', async tools => {
-  tsn.compileFileArray(assetfiles, { outDir: './test/assets/output' });
+  tsbuild.compileFileArray(assetfiles, { outDir: './test/assets/output' });
 });
 
 tap.test('should convert files from an array with single files to output', async tools => {
-  tsn.compileGlobStringObject(assetfiles2);
+  tsbuild.compileGlobStringObject(assetfiles2);
 });
 
 tap.start();

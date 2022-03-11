@@ -13,11 +13,12 @@ export const compilerOptionsDefault: CompilerOptions = {
   inlineSourceMap: true,
   noEmitOnError: true,
   outDir: 'dist_ts/',
-  module: plugins.typescript.ModuleKind.CommonJS,
-  lib: ['lib.es2017.d.ts'],
+  module: plugins.typescript.ModuleKind.ES2020,
+  moduleResolution: plugins.typescript.ModuleResolutionKind.Node12,
+  lib: [],
   noImplicitAny: false,
   esModuleInterop: true,
-  target: plugins.typescript.ScriptTarget.ES2017,
+  target: plugins.typescript.ScriptTarget.ES2020,
   importsNotUsedAsValues: plugins.typescript.ImportsNotUsedAsValues.Preserve
 };
 
