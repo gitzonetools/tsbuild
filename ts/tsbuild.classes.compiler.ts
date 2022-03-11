@@ -13,7 +13,7 @@ export const compilerOptionsDefault: CompilerOptions = {
   inlineSourceMap: true,
   noEmitOnError: true,
   outDir: 'dist_ts/',
-  module: plugins.typescript.ModuleKind.ES2020,
+  module: plugins.typescript.ModuleKind.CommonJS,
   moduleResolution: plugins.typescript.ModuleResolutionKind.Node12,
   lib: [],
   noImplicitAny: false,
