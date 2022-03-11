@@ -1,5 +1,5 @@
-import * as plugins from './tsbuild.plugins';
-import { compiler, CompilerOptions, mergeCompilerOptions } from './tsbuild.classes.compiler';
+import * as plugins from './tsbuild.plugins.js';
+import { compiler, CompilerOptions, mergeCompilerOptions } from './tsbuild.classes.compiler.js';
 
 export * from './tsbuild.classes.compiler';
 
