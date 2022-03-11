@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 process.env.CLI_CALL = 'true';
-const cliTool = await import('./dist_ts/index.js');
+const cliTool = require('./dist_ts/index');
 cliTool.runCli();

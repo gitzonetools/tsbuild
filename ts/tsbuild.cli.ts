@@ -1,5 +1,5 @@
-import * as plugins from './tsbuild.plugins.js';
-import * as tsbuild from './tsbuild.exports.js';
+import * as plugins from './tsbuild.plugins';
+import * as tsbuild from './tsbuild.exports';
 
 export const runCli = async () => {
   const tsbuildCli = new plugins.smartcli.Smartcli();
