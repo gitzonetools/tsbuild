@@ -1,6 +1,6 @@
 import { tap, expect, expectAsync } from '@pushrocks/tapbundle';
 
-import * as tsbuild from '../ts/index';
+import * as tsbuild from '../ts/index.js';
 
 let assetfiles: string[] = ['./test/assets/tocompile.ts', './test/assets/tocompile2.ts'];
 

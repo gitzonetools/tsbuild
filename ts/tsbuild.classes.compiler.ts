@@ -1,7 +1,7 @@
 // import all the stuff we need
-import * as plugins from './tsbuild.plugins';
-import { CompilerOptions } from 'typescript';
-export { CompilerOptions, ScriptTarget, ModuleKind } from 'typescript';
+import * as plugins from './tsbuild.plugins.js';
+import { CompilerOptions, ScriptTarget, ModuleKind } from 'typescript';
+
 
 /**
  * the default typescript compilerOptions
@@ -13,12 +13,12 @@ export const compilerOptionsDefault: CompilerOptions = {
   inlineSourceMap: true,
   noEmitOnError: true,
   outDir: 'dist_ts/',
-  module: plugins.typescript.ModuleKind.CommonJS,
+  module: plugins.typescript.ModuleKind.ES2020,
+  target: plugins.typescript.ScriptTarget.ES2020,
   moduleResolution: plugins.typescript.ModuleResolutionKind.Node12,
   lib: [],
   noImplicitAny: false,
   esModuleInterop: true,
-  target: plugins.typescript.ScriptTarget.ES2020,
   importsNotUsedAsValues: plugins.typescript.ImportsNotUsedAsValues.Preserve
 };
 

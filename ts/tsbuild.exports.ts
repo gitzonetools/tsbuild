@@ -1,7 +1,8 @@
-import * as plugins from './tsbuild.plugins';
-import { compiler, CompilerOptions, mergeCompilerOptions } from './tsbuild.classes.compiler';
+import * as plugins from './tsbuild.plugins.js';
+import { CompilerOptions } from 'typescript';
+import { compiler, mergeCompilerOptions } from './tsbuild.classes.compiler.js';
 
-export * from './tsbuild.classes.compiler';
+export * from './tsbuild.classes.compiler.js';
 
 /**
  * compile am array of absolute file paths

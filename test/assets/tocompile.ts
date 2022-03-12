@@ -6,7 +6,7 @@ import * as early from '@pushrocks/early';
 early.start();
 early.stop();
 
-import {anExportedString} from './tocompile2';
+import {anExportedString} from './tocompile2.js';
 console.log(anExportedString);
 
 class test2 {
