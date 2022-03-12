@@ -1,6 +1,12 @@
 import * as plugins from './tsbuild.plugins.js';
-import { CompilerOptions } from 'typescript';
+import type { CompilerOptions, ScriptTarget, ModuleKind } from 'typescript';
 import { compiler, mergeCompilerOptions } from './tsbuild.classes.compiler.js';
+
+export type {
+  CompilerOptions,
+  ScriptTarget,
+  ModuleKind
+}
 
 export * from './tsbuild.classes.compiler.js';
 

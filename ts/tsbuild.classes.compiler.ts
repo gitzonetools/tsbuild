@@ -1,6 +1,6 @@
 // import all the stuff we need
 import * as plugins from './tsbuild.plugins.js';
-import { CompilerOptions, ScriptTarget, ModuleKind } from 'typescript';
+import { CompilerOptions, ScriptTarget, ModuleKind } from './tsbuild.exports.js';
 
 
 /**
