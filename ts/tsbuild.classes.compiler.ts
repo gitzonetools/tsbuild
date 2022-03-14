@@ -17,7 +17,7 @@ export const compilerOptionsDefault: CompilerOptions = {
   target: plugins.typescript.ScriptTarget.ES2020,
   moduleResolution: plugins.typescript.ModuleResolutionKind.Node12,
   lib: [],
-  noImplicitAny: false,
+  noImplicitAny: true,
   esModuleInterop: true,
   importsNotUsedAsValues: plugins.typescript.ImportsNotUsedAsValues.Preserve
 };
