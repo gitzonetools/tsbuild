@@ -49,6 +49,9 @@ export const mergeCompilerOptions = (
     ...argvArg && argvArg.skiplibcheck ? {
       skipLibCheck: true
     } : {},
+    ...argvArg && argvArg.allowimplicitany ? {
+      noImplicitAny: false
+    } : {},
   };
 
   return mergedOptions;
