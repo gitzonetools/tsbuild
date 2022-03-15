@@ -54,7 +54,7 @@ export const mergeCompilerOptions = (
     } : {},
     ...argvArg && argvArg.commonjs ? {
       module: plugins.typescript.ModuleKind.CommonJS,
-      moduleResolution: plugins.typescript.ModuleResolutionKind.Classic,
+      moduleResolution: plugins.typescript.ModuleResolutionKind.NodeJs,
     } : {},
   };
 
