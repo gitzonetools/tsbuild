@@ -16,15 +16,10 @@ export const compilerOptionsDefault: CompilerOptions = {
   module: plugins.typescript.ModuleKind.ES2020,
   target: plugins.typescript.ScriptTarget.ES2020,
   moduleResolution: plugins.typescript.ModuleResolutionKind.Node12,
-  lib: [],
+  lib: ['lib.dom.d.ts'],
   noImplicitAny: true,
   esModuleInterop: true,
   importsNotUsedAsValues: plugins.typescript.ImportsNotUsedAsValues.Preserve
-};
-
-export const compilerOptionsWebDefault: CompilerOptions = {
-  ...compilerOptionsDefault,
-  lib: [...compilerOptionsDefault.lib, 'lib.dom.d.ts']
 };
 
 /**
@@ -34,17 +29,9 @@ export const mergeCompilerOptions = (
   customTsOptions: CompilerOptions,
   argvArg?: any
 ): CompilerOptions => {
-  const defaultOptionsToMerge = (() => {
-    if (argvArg && argvArg.web) {
-      return compilerOptionsWebDefault;
-    } else {
-      return compilerOptionsDefault;
-    }
-  })();
-
   // create merged options
   const mergedOptions: CompilerOptions = {
-    ...defaultOptionsToMerge,
+    ...compilerOptionsDefault,
     ...customTsOptions,
     ...argvArg && argvArg.skiplibcheck ? {
       skipLibCheck: true
