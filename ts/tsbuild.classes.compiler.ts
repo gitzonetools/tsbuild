@@ -58,6 +58,8 @@ export const mergeCompilerOptions = (
     } : {},
   };
 
+  console.log(mergedOptions)
+
   return mergedOptions;
 };
 
