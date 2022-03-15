@@ -52,6 +52,10 @@ export const mergeCompilerOptions = (
     ...argvArg && argvArg.allowimplicitany ? {
       noImplicitAny: false
     } : {},
+    ...argvArg && argvArg.commonjs ? {
+      module: plugins.typescript.ModuleKind.CommonJS,
+      moduleResolution: plugins.typescript.ModuleResolutionKind.Classic,
+    } : {},
   };
 
   return mergedOptions;
