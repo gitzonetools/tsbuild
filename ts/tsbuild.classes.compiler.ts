@@ -53,11 +53,17 @@ export const mergeCompilerOptions = (
 /**
  * the internal main compiler function that compiles the files
  */
-export const compiler = (
+export const compiler = async (
   fileNames: string[],
   options: plugins.typescript.CompilerOptions,
   argvArg?: any
 ): Promise<any[]> => {
+  if (options.skipLibCheck) {
+    console.log('? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?')
+    console.log('You are skipping libcheck... Is that really wanted?');
+    console.log('? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?')
+    await plugins.smartdelay.delayFor(5000);
+  }
   console.log(`Compiling ${fileNames.length} files...`);
   const done = plugins.smartpromise.defer<any[]>();
   const program = plugins.typescript.createProgram(fileNames, options);

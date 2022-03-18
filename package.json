@@ -30,6 +30,7 @@
   "dependencies": {
     "@pushrocks/early": "^3.0.6",
     "@pushrocks/smartcli": "^3.0.14",
+    "@pushrocks/smartdelay": "^2.0.13",
     "@pushrocks/smartfile": "^9.0.6",
     "@pushrocks/smartlog": "^2.0.44",
     "@pushrocks/smartpath": "^5.0.4",
