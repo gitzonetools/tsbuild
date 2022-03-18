@@ -1,1 +1,1 @@
-export declare const anExportedString = "exported string";
+export declare const anExportedString = 'exported string';

@@ -38,7 +38,7 @@ export const runCli = async () => {
       },
       {},
       process.cwd(),
-      { web: true, ...argvArg },
+      { web: true, ...argvArg }
     );
   });
 

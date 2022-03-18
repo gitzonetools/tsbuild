@@ -9,7 +9,7 @@
       "githost": "gitlab.com",
       "gitscope": "gitzone",
       "gitrepo": "tsbuild",
-      "shortDescription": "TypeScript nightly to easily make use of latest features",
+      "description": "TypeScript nightly to easily make use of latest features",
       "npmPackagename": "@gitzone/tsbuild",
       "license": "MIT"
     }

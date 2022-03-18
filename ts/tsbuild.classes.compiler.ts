@@ -2,7 +2,6 @@
 import * as plugins from './tsbuild.plugins.js';
 import { CompilerOptions, ScriptTarget, ModuleKind } from './tsbuild.exports.js';
 
-
 /**
  * the default typescript compilerOptions
  */
@@ -19,7 +18,7 @@ export const compilerOptionsDefault: CompilerOptions = {
   lib: ['lib.dom.d.ts'],
   noImplicitAny: true,
   esModuleInterop: true,
-  importsNotUsedAsValues: plugins.typescript.ImportsNotUsedAsValues.Preserve
+  importsNotUsedAsValues: plugins.typescript.ImportsNotUsedAsValues.Preserve,
 };
 
 /**
@@ -33,19 +32,25 @@ export const mergeCompilerOptions = (
   const mergedOptions: CompilerOptions = {
     ...compilerOptionsDefault,
     ...customTsOptions,
-    ...argvArg && argvArg.skiplibcheck ? {
-      skipLibCheck: true
-    } : {},
-    ...argvArg && argvArg.allowimplicitany ? {
-      noImplicitAny: false
-    } : {},
-    ...argvArg && argvArg.commonjs ? {
-      module: plugins.typescript.ModuleKind.CommonJS,
-      moduleResolution: plugins.typescript.ModuleResolutionKind.NodeJs,
-    } : {},
+    ...(argvArg && argvArg.skiplibcheck
+      ? {
+          skipLibCheck: true,
+        }
+      : {}),
+    ...(argvArg && argvArg.allowimplicitany
+      ? {
+          noImplicitAny: false,
+        }
+      : {}),
+    ...(argvArg && argvArg.commonjs
+      ? {
+          module: plugins.typescript.ModuleKind.CommonJS,
+          moduleResolution: plugins.typescript.ModuleResolutionKind.NodeJs,
+        }
+      : {}),
   };
 
-  console.log(mergedOptions)
+  console.log(mergedOptions);
 
   return mergedOptions;
 };
@@ -59,9 +64,9 @@ export const compiler = async (
   argvArg?: any
 ): Promise<any[]> => {
   if (options.skipLibCheck) {
-    console.log('? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?')
+    console.log('? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?');
     console.log('You are skipping libcheck... Is that really wanted?');
-    console.log('? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?')
+    console.log('? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?');
     await plugins.smartdelay.delayFor(5000);
   }
   console.log(`Compiling ${fileNames.length} files...`);
@@ -77,7 +82,7 @@ export const compiler = async (
   const allDiagnostics = plugins.typescript
     .getPreEmitDiagnostics(program)
     .concat(emitResult.diagnostics);
-  allDiagnostics.forEach(diagnostic => {
+  allDiagnostics.forEach((diagnostic) => {
     if (diagnostic.file) {
       const { line, character } = diagnostic.file.getLineAndCharacterOfPosition(diagnostic.start!);
       const message = plugins.typescript.flattenDiagnosticMessageText(diagnostic.messageText, '\n');

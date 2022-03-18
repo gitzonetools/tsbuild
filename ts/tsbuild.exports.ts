@@ -2,11 +2,7 @@ import * as plugins from './tsbuild.plugins.js';
 import type { CompilerOptions, ScriptTarget, ModuleKind } from 'typescript';
 import { compiler, mergeCompilerOptions } from './tsbuild.classes.compiler.js';
 
-export type {
-  CompilerOptions,
-  ScriptTarget,
-  ModuleKind
-}
+export type { CompilerOptions, ScriptTarget, ModuleKind };
 
 export * from './tsbuild.classes.compiler.js';
 
@@ -51,7 +47,7 @@ export let compileGlobStringObject = async (
       );
       tsOptionsArg = {
         ...tsOptionsArg,
-        outDir: destDir
+        outDir: destDir,
       };
       compiledFiles = compiledFiles.concat(
         compiledFiles,
