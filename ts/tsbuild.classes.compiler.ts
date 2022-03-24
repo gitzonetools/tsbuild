@@ -18,6 +18,7 @@ export const compilerOptionsDefault: CompilerOptions = {
   lib: ['lib.dom.d.ts'],
   noImplicitAny: true,
   esModuleInterop: true,
+  useDefineForClassFields: false,
   importsNotUsedAsValues: plugins.typescript.ImportsNotUsedAsValues.Preserve,
 };
 
