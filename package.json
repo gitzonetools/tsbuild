@@ -28,19 +28,19 @@
   },
   "homepage": "https://gitlab.com/pushrocks/tsn#README",
   "dependencies": {
-    "@pushrocks/early": "^3.0.6",
+    "@pushrocks/early": "^4.0.2",
     "@pushrocks/smartcli": "^3.0.14",
     "@pushrocks/smartdelay": "^2.0.13",
     "@pushrocks/smartfile": "^9.0.6",
     "@pushrocks/smartlog": "^2.0.44",
-    "@pushrocks/smartpath": "^5.0.4",
+    "@pushrocks/smartpath": "^5.0.5",
     "@pushrocks/smartpromise": "^3.1.7",
-    "typescript": "4.7.0"
+    "typescript": "^4.7.2"
   },
   "devDependencies": {
-    "@gitzone/tsrun": "^1.2.31",
-    "@pushrocks/tapbundle": "^5.0.2",
-    "@types/node": "^17.0.21"
+    "@gitzone/tsrun": "^1.2.34",
+    "@pushrocks/tapbundle": "^5.0.3",
+    "@types/node": "^17.0.35"
   },
   "files": [
     "ts/**/*",
