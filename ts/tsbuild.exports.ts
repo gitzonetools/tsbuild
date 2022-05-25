@@ -40,11 +40,11 @@ export let compileGlobStringObject = async (
       const absoluteFilePathArray: string[] = plugins.smartpath.transform.toAbsolute(
         fileTreeArray,
         cwdArg
-      );
+      ) as string[];
       const destDir: string = plugins.smartpath.transform.toAbsolute(
         globStringObjectArg[keyArg],
         cwdArg
-      );
+      ) as string;
       tsOptionsArg = {
         ...tsOptionsArg,
         outDir: destDir,
