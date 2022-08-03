@@ -7,7 +7,7 @@ export const runCli = async () => {
   /**
    * the standard task compiles anything in ts/ directory to dist directory
    */
-  tsbuildCli.standardTask().subscribe(async (argvArg) => {
+  tsbuildCli.standardCommand().subscribe(async (argvArg) => {
     tsbuild.compileGlobStringObject(
       {
         './ts/**/*.ts': './dist_ts',
